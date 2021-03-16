@@ -3,11 +3,18 @@ package labs7.opdr34;
 import java.util.List;
 
 public class Bank {
+    private final String name = "DebBank";
     private List<BankAccount> bank;
     private int countAccountNumber;
+    private BackOffice backOffice;
 
-    public Bank(List<BankAccount> bank) {
+    public Bank(List<BankAccount> bank, BackOffice backOffice) {
         this.bank = bank;
+        this.backOffice = backOffice;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public List<BankAccount> getBank() {
@@ -22,6 +29,10 @@ public class Bank {
     }
     public void setCountAccountNumber(int countAccountNumber) {
         this.countAccountNumber = countAccountNumber;
+    }
+
+    public BackOffice getBackOffice() {
+        return backOffice;
     }
 
     public void printAllBankRecords() {
