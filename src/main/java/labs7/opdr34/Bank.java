@@ -37,6 +37,7 @@ public class Bank {
 
     public void printAllBankRecords() {
         for (BankAccount bankAccount: this.getBank()) {
+            // je zou ook een toString kunnen maken in Bank hiervoor:
             System.out.println("Accountnummer: " + bankAccount.getAccountNumber() + " || " +
                     "Totaalbedrag op de rekening: " + bankAccount.getBalance() + " || " +
                     "Rente op dit moment voor één jaar: " + bankAccount.getInterestRate());
