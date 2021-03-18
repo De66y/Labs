@@ -23,10 +23,11 @@ public class ATM {
 
             choice = scanner.nextInt();
 
+            // zou een switch hier niet mooier zijn?
             if (choice == 1) {
                 //1. Een bankrekening aanmaken.
                 BankAccount bankAccount = new BankAccount(bank.getCountAccountNumber());
-                bank.setCountAccountNumber(bank.getCountAccountNumber()+1);
+                bank.setCountAccountNumber(bank.getCountAccountNumber() + 1);
                 System.out.println("Accountnumber: " + bankAccount.getAccountNumber());
                 bank.setBank(bankAccount);
                 System.out.println("Bank getallaccountlist: " + bank.getBank().size());
@@ -46,7 +47,7 @@ public class ATM {
                 System.out.print("Hoeveel geld wilt u opnemen: ");
                 BigDecimal money = scanner.nextBigDecimal();
                 bank.getBackOffice().withdrawMoney(money, bank.getBank().get(accountNumber));
-            } else if (choice ==4){
+            } else if (choice == 4) {
                 //4. Geld overmaken tussen bankrekeningen. XXXXX
                 System.out.print("Van welke rekening wilt u het geld overmaken: ");
                 int vanRekening = scanner.nextInt();
@@ -56,19 +57,20 @@ public class ATM {
                 BigDecimal money = scanner.nextBigDecimal();
                 bank.getBackOffice().withdrawMoney(money, bank.getBank().get(vanRekening));
                 bank.getBackOffice().depositMoney(money, bank.getBank().get(naarRekening));
-            } else if (choice==5) {
+            } else if (choice == 5) {
                 //5. Totaalbedrag van een bankrekening opvragen.
                 System.out.print("Van welke rekeningnummer wilt u het totaalbedrag weten: ");
                 int accountNumber = scanner.nextInt();
                 System.out.println("Het totaalbedrag is: " + bank.getBank().get(accountNumber).getBalance());
-            } else if (choice==6){
+            } else if (choice == 6) {
                 //6. Informatie van alle rekeningen.
                 bank.printAllBankRecords();
-            } else if (choice==7) {
+            } else if (choice == 7) {
                 //7. Afsluiten.
                 System.out.println("Tot de volgende keer.");
                 whileMenu = false;
-            }else {
+                // Je kunt ook een break of return hier doen en dan een while(true)
+            } else {
                 System.out.println("Verkeerde invoer, kies opnieuw");
             }
 

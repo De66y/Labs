@@ -10,12 +10,13 @@ package labs7.opdr34;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+// nog een keer testjes maken (eigenlijk tegelijk doen met code schrijven)
 public class MyBankApp {
 
     public static void main(String[] args) {
-        ATM ATM = new ATM();
-        ATM.mainMenu(new Scanner(System.in), new Bank(new ArrayList<>(), new BackOffice()));
-
+        // object met kleine letters
+        ATM atm = new ATM();
+        atm.mainMenu(new Scanner(System.in), new Bank(new ArrayList<>(), new BackOffice()));
 
     }
 }
