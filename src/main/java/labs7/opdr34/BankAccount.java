@@ -4,9 +4,9 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class BankAccount {
-    private int accountNumber;
-    private BigDecimal balance;
     private final BigDecimal interestPercentage = BigDecimal.valueOf(0.1); //Rente is 10%
+    private final int accountNumber;
+    private BigDecimal balance;
     private BigDecimal interestRate;
 
     public BankAccount(int accountNumber) {
@@ -22,6 +22,7 @@ public class BankAccount {
     public BigDecimal getBalance() {
         return balance;
     }
+
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
     }
