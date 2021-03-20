@@ -18,9 +18,13 @@ public class Person {
     }
 
     public void haveBirthday() {
-        age++;
-        if (age > 130) {
-            throw new PersonHasDiedException(name + " had died");
+        try {
+            age++;
+            if (age > 130) {
+                throw new PersonHasDiedException(name + " had died");
+            }
+        } catch (PersonHasDiedException ex) {
+            System.out.println("Catch print: " + ex.getMessage());
         }
     }
 
