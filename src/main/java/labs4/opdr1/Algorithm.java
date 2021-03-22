@@ -8,9 +8,9 @@ public class Algorithm {
 
     public void start () {
         String accountNumber = receiveBankAccountNumber(new Scanner(System.in));
-        if (!checkValidBankAccountNumber(accountNumber)) { //If de bankaccount is valid
+        if (checkValidBankAccountNumber(accountNumber)) { //If de bankaccount is valid
             int sumOfTotal = totalOfMultiply(new ArrayList<>(), accountNumber);
-            bankAccountYesOrNo(sumOfTotal);
+            System.out.println(bankAccountYesOrNo(sumOfTotal));
         }
     }
 
@@ -20,15 +20,15 @@ public class Algorithm {
     }
 
     public boolean checkValidBankAccountNumber(String givenBankAccountNumber) {
+        boolean boo = false;
         try {
-            if (!givenBankAccountNumber.matches("[0-9]+")) {
-                //throw new IllegalArgumentException("De invoer klopt niet");
+            if (!givenBankAccountNumber.matches("[0-9]+")) { //if het nummer niet matches
                 throw new NumberFormatException("De invoer klopt niet");
-            }
+            } else {boo = true;}
         } catch (NumberFormatException e) {
             System.out.println(e.getMessage());
         }
-        return true;
+        return boo;
     }
 
     public int totalOfMultiply(List<Integer> opslagLijst, String bankAccount) {
@@ -48,14 +48,15 @@ public class Algorithm {
     }
 
     public String bankAccountYesOrNo(int sumOfTotal) {
+        String yesOrNo = null;
         try {
             if (!(sumOfTotal % 11 == 0)) {
                 throw new IllegalArgumentException("Dit is geen bankrekeningnummer.");
-            }
+            } else{yesOrNo = "Dit is een bankrekeningnummer.";}
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
-        return "Dit is een bankrekeningnummer.";
+        return yesOrNo;
     }
 
 
