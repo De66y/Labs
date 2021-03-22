@@ -6,6 +6,7 @@ public class Main {
     }
 
     public static int factorial(int number) {
+        //Zichzelf steeds aan laten roepen
         int uitkomst = number;
         for ( int i = number; i< number; i++) {
             uitkomst = uitkomst * (number-1);
