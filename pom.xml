@@ -16,13 +16,30 @@
     </properties>
 
     <dependencies>
-        <!-- Voor de JUnit5 test, 1 dependency, 3 benodigde dependencies -->
+        <!-- Voor de JUnit5 test, 1 dependency, 3 benodigde dependencies zitten hierin -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit.jupiter.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Voor de pitest opdracht -->
+        <dependency>
+            <groupId>org.pitest</groupId>
+            <artifactId>pitest-parent</artifactId>
+            <version>1.1.10</version>
+            <type>pom</type>
+        </dependency>
+
+        <!-- Voor de TDD2 opdracht -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.10.19</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
 
