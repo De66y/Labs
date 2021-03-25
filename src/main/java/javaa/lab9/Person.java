@@ -84,7 +84,6 @@ public class Person {
 
     //can be overriden to specify what to do when a given object is garbage collected
     //(actually what to do just before it is garbage collected, automatic or with System.gc).
-    //Va java 9 niet meer mogelijk om te gebruiken.
     @Override
     protected void finalize() throws Throwable {
         System.out.println("Finalize was called");
