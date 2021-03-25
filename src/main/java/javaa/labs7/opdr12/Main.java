@@ -13,5 +13,10 @@ public class Main {
 
         Person t = new Person ("Truus", 130, Gender.FEMALE);
         t.haveBirthday();
+
+        String string1 = "debby";
+        String string2 = "debby";
+        System.out.println("123" == "123");
+        System.out.println(string1.equals(string2));
     }
 }
