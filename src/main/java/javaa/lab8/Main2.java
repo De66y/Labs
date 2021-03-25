@@ -1,4 +1,4 @@
-package javaa.lab8.opdr12;
+package javaa.lab8;
 
 import javaa.labs7.opdr12.Gender;
 import javaa.labs7.opdr12.Person;
