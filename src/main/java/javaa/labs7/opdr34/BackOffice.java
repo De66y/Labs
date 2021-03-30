@@ -3,6 +3,8 @@ package javaa.labs7.opdr34;
 import java.math.BigDecimal;
 
 public class BackOffice {
+    private int countAccountNumber;
+
     public void depositMoney(BigDecimal amount, BankAccount bankAccount) {
         bankAccount.setBalance(bankAccount.getBalance().add(amount));
     }
@@ -13,6 +15,9 @@ public class BackOffice {
         } else {
             bankAccount.setBalance(bankAccount.getBalance().subtract(amount));
         }
+    }
+
+    public void addBankAccount(int bankAccountNumber) {
     }
 
 }
