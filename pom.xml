@@ -16,7 +16,6 @@
         <junit.jupiter.version>5.7.0</junit.jupiter.version>
     </properties>
 
-    <dependencyManagement>
     <dependencies>
         <!-- Voor de JUnit5 test, 1 dependency, 3 benodigde dependencies zitten hierin -->
         <dependency>
@@ -37,8 +36,15 @@
         <!-- Voor de TDD2 opdracht -->
         <dependency>
             <groupId>org.mockito</groupId>
-            <artifactId>mockito-all</artifactId>
-            <version>1.10.19</version>
+            <artifactId>mockito-core</artifactId>
+            <version>3.5.15</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>3.5.15</version> <!-- Dezelfde versie als mockito.core-->
             <scope>test</scope>
         </dependency>
 

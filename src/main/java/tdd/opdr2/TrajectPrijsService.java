@@ -5,6 +5,8 @@ public class TrajectPrijsService {
     private TrajectEenhedenNaarPrijsService tenps;
 
     public int getTrajectPrijs(String from, String to) {
-        return 0;
+        int eenheid = tntes.getTrajectEenheden(from, to);
+        int bedrag = tenps.getPriceTrajectEenheden(eenheid);
+        return eenheid * bedrag;
     }
 }
