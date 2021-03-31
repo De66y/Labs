@@ -9,6 +9,8 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 @ExtendWith(MockitoExtension.class)
 class TrajectPrijsServiceTest {
 
@@ -26,7 +28,7 @@ class TrajectPrijsServiceTest {
     }
 
     @Test
-    public void getTrajectPrijs() {
+    public void whenTrajectThenPrice() {
         //Given
         Mockito.when(trajectEenhedenNaarPrijsService.getPriceTrajectEenheden(4)).thenReturn(10);
         Mockito.when(trajectNaarTrajectEenhedenService.getTrajectEenheden("Etten-Leur", "Rotterdam-Centraal")).thenReturn(4);
@@ -35,5 +37,13 @@ class TrajectPrijsServiceTest {
         int test = tps.getTrajectPrijs("Etten-Leur", "Rotterdam-Centraal");
 
         Assertions.assertEquals(40, test);
+    }
+
+    @Test
+    public void whenWrongTrajectThenException(){
+        //Given
+        Mockito.when(trajectNaarTrajectEenhedenService.getTrajectEenheden("bla", "Etten-Leur")).thenThrow(InvalidLocationException.class);
+        //When and then (Hier omgedraaid: then Exception -> when
+        assertThrows(InvalidLocationException.class, () -> {tps.getTrajectPrijs("bla", "Etten-Leur");});
     }
 }
