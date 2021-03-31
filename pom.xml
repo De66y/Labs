@@ -36,7 +36,7 @@
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-junit-jupiter</artifactId>
-            <version>3.8.0</version>  <!--Dezelfde versie als mockito.core, nu even de versie van bam gepakt-->
+            <version>3.5.15</version>  <!--Dezelfde versie als mockito.core, nu even de versie van bam gepakt-->
             <scope>test</scope>
         </dependency>
 
@@ -54,7 +54,7 @@
         <plugin>
             <groupId>org.pitest</groupId>
             <artifactId>pitest-maven</artifactId>
-            <version>1.5.2</version> <!--volgens brams pom 1.5.2, ik had 1.2.0 -->
+            <version>1.5.2</version>
             <executions>
                 <execution>
                     <goals>
