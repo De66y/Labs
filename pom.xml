@@ -13,7 +13,7 @@
         <maven.compiler.target>11</maven.compiler.target>
         <maven.compiler.release>11</maven.compiler.release>
 
-        <junit.jupiter.version>5.7.0</junit.jupiter.version>
+        <junit.jupiter.engine.version>5.7.0</junit.jupiter.engine.version>
     </properties>
 
     <dependencies>
@@ -21,16 +21,8 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.jupiter.version}</version>
+            <version>${junit.jupiter.engine.version}</version>
             <scope>test</scope>
-        </dependency>
-
-        <!-- Voor de pitest opdracht. Waar is deze voor? -->
-        <dependency>
-            <groupId>org.pitest</groupId>
-            <artifactId>pitest-parent</artifactId>
-            <version>1.6.4</version>
-            <type>pom</type>
         </dependency>
 
         <!-- Mockito. Voor de TDD2 opdracht -->
@@ -44,18 +36,24 @@
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-junit-jupiter</artifactId>
-            <version>3.5.15</version>  <!--Dezelfde versie als mockito.core-->
+            <version>3.8.0</version>  <!--Dezelfde versie als mockito.core, nu even de versie van bam gepakt-->
             <scope>test</scope>
         </dependency>
-
     </dependencies>
+
 <!-- Pitest plugin -->
     <build>
     <plugins>
+        <plugin> <!-- Surefire version updaten -->
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.22.2</version>
+        </plugin>
+
         <plugin>
             <groupId>org.pitest</groupId>
             <artifactId>pitest-maven</artifactId>
-            <version>1.2.0</version>
+            <version>1.5.2</version> <!--volgens brams pom 1.5.2, ik had 1.2.0 -->
             <executions>
                 <execution>
                     <goals>
@@ -72,11 +70,11 @@
                     <param>javaa*</param>
                 </targetTests>
             </configuration>
-            <dependencies> <!-- Deze dependency moet hier staan. Voor de samenwerking met JUnit5-->
+            <dependencies> <!-- Deze dependency moet hier staan. Voor de samenwerking met JUnit5 -->
                 <dependency>
                     <groupId>org.pitest</groupId>
                     <artifactId>pitest-junit5-plugin</artifactId>
-                    <version>0.12</version>
+                    <version>0.9</version> <!--volgens brams pom 0.9. ik had 0.12 -->
                 </dependency>
         </dependencies>
         </plugin>
