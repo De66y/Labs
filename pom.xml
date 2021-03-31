@@ -39,6 +39,7 @@
             <version>3.8.0</version>  <!--Dezelfde versie als mockito.core, nu even de versie van bam gepakt-->
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
 <!-- Pitest plugin -->

@@ -11,7 +11,6 @@ public class AnnotationReader {
             if(m.isAnnotationPresent(MyAnnotation.class)) annotationList.add(m.getName());   //m.getAnnotation(MyAnnotation.class).value());
             if(m.isAnnotationPresent(MyAnnotation2.class)) annotationList.add(m.getName());  //getAnnotation(MyAnnotation2.class).value());
         }
-
         return annotationList;
 
     }
