@@ -17,7 +17,7 @@
     </properties>
 
     <dependencies>
-        <!-- Voor de JUnit5 test, 1 dependency, 3 benodigde dependencies zitten hierin -->
+        <!-- Voor de JUnit5 test, 1 dependency, 3 benodigde dependencies zitten hierin ZIT ERIN-->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
@@ -25,7 +25,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Mockito. Voor de TDD2 opdracht -->
+        <!-- Mockito. Voor de TDD2 opdracht 2 ZITTEN ERIN-->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
@@ -42,7 +42,7 @@
 
     </dependencies>
 
-<!-- Pitest plugin -->
+<!-- Surefire update Pitest plugin ZIT ERIN-->
     <build>
     <plugins>
         <plugin> <!-- Surefire version updaten -->
